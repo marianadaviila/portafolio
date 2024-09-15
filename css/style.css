@@ -97,6 +97,7 @@ body {
 /* Hero Section */
 #hero {
     background: url('../img/nani-fondo.png') center/cover no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     position: relative;
     height: 100vh;
@@ -151,13 +152,13 @@ body {
     color: var(--fondo-gris-claro);
 }
 
-/* Mobile and small devices */
+/* Responsive styling for mobile */
 @media (max-width: 768px) {
   #hero {
-    height: 70vh; 
-    background-size: cover;
-    background-position: center;
+    background-size: contain; 
+    background-position: center top;
     background-attachment: scroll; 
+    height: 70vh;
   }
 
   #hero h1 {
@@ -168,6 +169,7 @@ body {
     font-size: 1.2rem;
   }
 }
+
 
 /* Sección Acerca de mí */
 .about-section {

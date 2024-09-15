@@ -330,12 +330,13 @@ body {
   left: 0;
   background-size: cover;
   background-position: center center;
-  transition: filter 0.3s ease;
   filter: grayscale(100%);
+  transition: filter 0.3s ease; 
 }
 
-.tl-item:hover .tl-bg {
-  filter: grayscale(0);
+.tl-item:hover .tl-bg,
+.tl-item:focus .tl-bg {
+  filter: grayscale(0); /* Cambiar a color */
 }
 
 @media (max-width: 768px) {
@@ -366,7 +367,7 @@ body {
 
  
   .tl-bg {
-    filter: grayscale(0); 
+    filter: grayscale(100); 
   }
 
   .tl-item:hover .tl-bg {

@@ -228,7 +228,9 @@ body {
 /* Timeline Styles */
 #timeline {
   display: flex;
+  flex-wrap: wrap; 
   background-color: var(--color-secundario);
+  overflow: hidden; 
 }
 
 .tl-item {
@@ -240,6 +242,22 @@ body {
   overflow: hidden;
   transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  #timeline {
+    flex-direction: column; 
+  }
+
+  .tl-item {
+    width: 100%; 
+    height: auto;
+    min-height: 300px;
+  }
+
+  .tl-content {
+    padding: 15px; 
+  }
 }
 
 .tl-item:hover {
@@ -320,6 +338,7 @@ body {
   font-size: 1.5rem;
 }
 
+/* Fondo de las imágenes del timeline */
 .tl-bg {
   position: absolute;
   width: 100%;
@@ -335,18 +354,6 @@ body {
 .tl-item:hover .tl-bg {
   filter: grayscale(0);
 }
-
-@media (max-width: 768px) {
-  #timeline {
-    flex-direction: column;
-  }
-
-  .tl-item {
-    width: 100%;
-    height: 60vh;
-  }
-}
-
 /* Featured Services Section */
 #featured-services {
   padding: 60px 0;

@@ -96,11 +96,11 @@ body {
 
 /* Hero Section */
 #hero {
-    background: url('../img/nani-fondo.png') center/cover no-repeat;
-    background-size: cover;
+    background: url('../img/nani-fondo.png') no-repeat center center;
+    background-size: cover; 
     background-attachment: fixed;
     position: relative;
-    height: 100vh;
+    min-height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,7 +135,7 @@ body {
     font-family: 'Now Regular', sans-serif;
     font-size: 1.5rem;
     color: var(--fondo-gris-claro);
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
 }
 
 #hero .btn {
@@ -152,28 +152,14 @@ body {
     color: var(--fondo-gris-claro);
 }
 
-/* Responsive styling for mobile */
-/* Responsive styling for mobile */
+
 @media (max-width: 768px) {
   #hero {
     background-size: cover; 
-    background-position: center top; 
+    background-position: center; 
+    min-height: 70vh;
     background-attachment: scroll; 
-    height: 70vh; 
   }
-
-  #hero h1 {
-    font-size: 2.5rem; 
-  }
-
-  #hero p {
-    font-size: 1.2rem; 
-  }
-
-  #hero .btn {
-    font-size: 1rem; 
-  }
-}
 
   #hero h1 {
     font-size: 2.5rem;
@@ -182,8 +168,11 @@ body {
   #hero p {
     font-size: 1.2rem;
   }
-}
 
+  #hero .btn {
+    font-size: 1rem;
+  }
+}
 
 /* Sección Acerca de mí */
 .about-section {

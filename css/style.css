@@ -134,7 +134,7 @@ body {
     font-family: 'Now Regular', sans-serif;
     font-size: 1.5rem;
     color: var(--fondo-gris-claro);
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 #hero .btn {
@@ -151,17 +151,21 @@ body {
     color: var(--fondo-gris-claro);
 }
 
+/* Mobile and small devices */
 @media (max-width: 768px) {
+  #hero {
+    height: 70vh; 
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; 
+  }
+
   #hero h1 {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
   }
 
   #hero p {
-    font-size: 1.2rem; 
-  }
-
-  #hero {
-    height: 70vh; 
+    font-size: 1.2rem;
   }
 }
 

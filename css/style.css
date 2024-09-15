@@ -225,22 +225,26 @@ body {
   }
 }
 
-/* Timeline Styles */
+/* timelines */
 #timeline {
   display: flex;
-  flex-wrap: wrap; 
   background-color: var(--color-secundario);
-  overflow: hidden;
+  justify-content: space-between; 
 }
 
 .tl-item {
   position: relative;
-  width: 100%; /* Ajustamos para que sea 100% del ancho en móvil */
-  height: auto;
+  width: 25%;
+  height: 100vh;
   min-height: 500px;
   color: #fff;
+  overflow: hidden;
   transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+.tl-item:hover {
+  width: 25%; 
 }
 
 .tl-item::before,
@@ -274,6 +278,7 @@ body {
 .tl-item:hover::before {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease 0.25s;
 }
 
 .tl-content {
@@ -316,6 +321,7 @@ body {
   font-size: 1.5rem;
 }
 
+/* Fondo de las imágenes del timeline */
 .tl-bg {
   position: absolute;
   width: 100%;
@@ -332,39 +338,39 @@ body {
   filter: grayscale(0);
 }
 
-/* Responsive for mobile */
 @media (max-width: 768px) {
   #timeline {
-    flex-direction: column; /* Cambia la dirección a columna en lugar de fila */
+    flex-direction: column; 
     align-items: center;
   }
 
   .tl-item {
-    width: 100%; /* Cada elemento ocupa el 100% del ancho */
-    height: auto; /* Permite que el contenido ajuste su tamaño automáticamente */
-    min-height: 300px; /* Ajustar el mínimo si es necesario */
+    width: 100%; 
+    height: auto; 
+    min-height: 300px; 
   }
 
   .tl-item:hover {
-    width: 100%; /* Elimina el cambio de tamaño en hover */
+    width: 100%; 
   }
 
   .tl-content {
-    top: 50%; /* Ajustar la posición del contenido */
-    transform: translateY(0); /* Elimina el efecto hover */
-    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    top: 50%; 
+    transform: translateY(0);
+    padding: 10px; 
   }
 
   .tl-year {
-    font-size: 1.2rem; /* Tamaño de texto adecuado para pantallas pequeñas */
+    font-size: 1.2rem;
   }
 
+ 
   .tl-bg {
-    filter: grayscale(0); /* Mostrar la imagen normalmente */
+    filter: grayscale(0); 
   }
 
   .tl-item:hover .tl-bg {
-    filter: grayscale(0); /* Elimina el cambio de imagen al hover en móviles */
+    filter: grayscale(0); 
   }
 }
 
@@ -462,7 +468,7 @@ body {
 /* Portfolio Section */
 #portfolio {
   padding: 60px 15px;
-  background-color: var(--fondo-oscuro);
+  background-color: var(--fondo-oscuro); /* Un color oscuro para contrastar las otras secciones */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -478,7 +484,7 @@ body {
 #portfolio .section-title p {
   text-align: center;
   font-family: 'Now Regular', sans-serif;
-  color: black; 
+  color: black; /* Texto claro para el fondo oscuro */
   margin-bottom: 40px;
   font-size: 1rem;
 }

@@ -228,40 +228,19 @@ body {
 /* Timeline Styles */
 #timeline {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap; /* Cambio importante para que los items se ajusten en pantallas pequeñas */
   background-color: var(--color-secundario);
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .tl-item {
   position: relative;
-  width: 25%;
-  height: 100vh;
+  width: 100%; /* Ajustamos para que sea 100% del ancho en móvil */
+  height: auto;
   min-height: 500px;
   color: #fff;
-  overflow: hidden;
   transition: all 0.2s ease;
   flex-shrink: 0;
-}
-
-@media (max-width: 768px) {
-  #timeline {
-    flex-direction: column; 
-  }
-
-  .tl-item {
-    width: 100%; 
-    height: auto;
-    min-height: 300px;
-  }
-
-  .tl-content {
-    padding: 15px; 
-  }
-}
-
-.tl-item:hover {
-  width: 25%; 
 }
 
 .tl-item::before,
@@ -295,7 +274,6 @@ body {
 .tl-item:hover::before {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 1s ease, transform 1s ease 0.25s;
 }
 
 .tl-content {
@@ -338,7 +316,6 @@ body {
   font-size: 1.5rem;
 }
 
-/* Fondo de las imágenes del timeline */
 .tl-bg {
   position: absolute;
   width: 100%;
@@ -354,101 +331,29 @@ body {
 .tl-item:hover .tl-bg {
   filter: grayscale(0);
 }
-/* Featured Services Section */
-#featured-services {
-  padding: 60px 0;
-  background-color: var(--fondo-gris-claro);
-}
 
-#featured-services .section-title h2 {
-  font-family: 'Now Black', sans-serif;
-  font-size: 2.5rem;
-  color: var(--color-principal);
-  margin-bottom: 20px;
-}
-
-#featured-services .section-title p {
-  font-family: 'Now Regular', sans-serif;
-  font-size: 1.2rem;
-  color: var(--color-texto);
-  margin-bottom: 40px;
-}
-
-#featured-services .box {
-  background: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 30px;
-}
-
-#featured-services .box h4 {
-  font-family: 'Now Black', sans-serif;
-  font-size: 1.5rem;
-  color: var(--color-principal);
-  margin-bottom: 15px;
-}
-
-#featured-services .box p {
-  font-family: 'Now Regular', sans-serif;
-  font-size: 1rem;
-  color: var(--color-texto);
-}
-
-#featured-services .box i {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--color-principal); 
-}
-
-#featured-services .box:nth-child(2) i {
-  color: #fff; 
-}
-
-#featured-services .box:nth-child(5) i {
-  color: #fff; 
-}
-
-#featured-services .box-bg {
-  background-color: var(--color-secundario);
-  color: #fff;
-}
-
-#featured-services .box-bg h4,
-#featured-services .box-bg p {
-  color: #fff;
-}
-
-#featured-services .box:hover {
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
-  transform: translateY(-10px);
-}
-
-#featured-services .box a {
-  text-decoration: none;
-  color: inherit;
-}
-
+/* Responsive for mobile */
 @media (max-width: 768px) {
-  #featured-services .box {
-    padding: 20px;
+  #timeline {
+    display: block;
   }
 
-  #featured-services .box h4 {
-    font-size: 1.2rem;
+  .tl-item {
+    width: 100%;
+    height: auto;
   }
 
-  #featured-services .box i {
-    font-size: 2rem;
+  .tl-content {
+    opacity: 1;
+    transform: translateY(0); 
+    padding-top: 40px;
   }
 }
 
 /* Portfolio Section */
 #portfolio {
   padding: 60px 15px;
-  background-color: var(--fondo-oscuro); /* Un color oscuro para contrastar las otras secciones */
+  background-color: var(--fondo-oscuro);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -464,7 +369,7 @@ body {
 #portfolio .section-title p {
   text-align: center;
   font-family: 'Now Regular', sans-serif;
-  color: black; /* Texto claro para el fondo oscuro */
+  color: black; 
   margin-bottom: 40px;
   font-size: 1rem;
 }

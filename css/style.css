@@ -228,7 +228,7 @@ body {
 /* Timeline Styles */
 #timeline {
   display: flex;
-  flex-wrap: wrap; /* Cambio importante para que los items se ajusten en pantallas pequeñas */
+  flex-wrap: wrap; 
   background-color: var(--color-secundario);
   overflow: hidden;
 }
@@ -335,21 +335,38 @@ body {
 /* Responsive for mobile */
 @media (max-width: 768px) {
   #timeline {
-    display: block;
+    flex-direction: column; /* Cambia la dirección a columna en lugar de fila */
+    align-items: center;
   }
 
   .tl-item {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Cada elemento ocupa el 100% del ancho */
+    height: auto; /* Permite que el contenido ajuste su tamaño automáticamente */
+    min-height: 300px; /* Ajustar el mínimo si es necesario */
+  }
+
+  .tl-item:hover {
+    width: 100%; /* Elimina el cambio de tamaño en hover */
   }
 
   .tl-content {
-    opacity: 1;
-    transform: translateY(0); 
-    padding-top: 40px;
+    top: 50%; /* Ajustar la posición del contenido */
+    transform: translateY(0); /* Elimina el efecto hover */
+    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .tl-year {
+    font-size: 1.2rem; /* Tamaño de texto adecuado para pantallas pequeñas */
+  }
+
+  .tl-bg {
+    filter: grayscale(0); /* Mostrar la imagen normalmente */
+  }
+
+  .tl-item:hover .tl-bg {
+    filter: grayscale(0); /* Elimina el cambio de imagen al hover en móviles */
   }
 }
-
 /* Portfolio Section */
 #portfolio {
   padding: 60px 15px;

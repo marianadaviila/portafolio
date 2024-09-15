@@ -155,10 +155,10 @@ body {
 /* Responsive styling for mobile */
 @media (max-width: 768px) {
   #hero {
-    background-size: contain; 
-    background-position: center top;
-    background-attachment: scroll; 
-    height: 70vh;
+    background-size: 100% auto; 
+    background-position: center top; 
+    background-attachment: scroll;
+    height: 70vh; 
   }
 
   #hero h1 {

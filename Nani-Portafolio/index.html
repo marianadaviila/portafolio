@@ -345,18 +345,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <script>
   $(document).ready(function() {
-=  $('.portfolio-filters li').on('click', function() {
+  $('.portfolio-filters li').on('click', function() {
     $('.portfolio-filters li').removeClass('filter-active');
     $(this).addClass('filter-active');
 
     var filterValue = $(this).attr('data-filter');
     
     if (filterValue == "*") {
-=      $('.portfolio-container .portfolio-item').removeClass('show').fadeOut().promise().done(function() {
+      $('.portfolio-container .portfolio-item').removeClass('show').fadeOut().promise().done(function() {
         $('.portfolio-container .portfolio-item').addClass('show').fadeIn();
       });
     } else {
-=      $('.portfolio-container .portfolio-item').removeClass('show').fadeOut().promise().done(function() {
+      $('.portfolio-container .portfolio-item').removeClass('show').fadeOut().promise().done(function() {
         $(filterValue).addClass('show').fadeIn();
       });
     }
